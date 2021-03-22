@@ -2,7 +2,6 @@
 ///
 ///    Bus class
 ///
-///    colour - randomly initialized bus colour
 ///    x,y,w,h - initial location and size of bus
 ///    rotation - rotation of bus in radians
 ///    speed, maxSpeed, friction - for accelleration, and deceleration
@@ -13,7 +12,6 @@
 ////////////////////////////////////////////
 
 public class Bus {
-  color colour;
   float x, y, w, h;
   float rotation, speed, maxSpeed, friction;
   PVector[] v = new PVector[4];
@@ -37,7 +35,6 @@ public class Bus {
     speed = 0;
     maxSpeed = MAX_BUS_SPEED;
     friction = BUS_FRICTION;
-    colour = color(random(0,255),random(0,255),random(0,255));
     
     v[0] = new PVector(0.0,0.0);
     v[1] = new PVector(0.0,0.0);
@@ -132,8 +129,7 @@ public class Bus {
     v[1].set(screenX(0 + (w*2)/3,-20),screenY(0 + (w*2)/3,-20));
     v[2].set(screenX(0 - w/3,-20),screenY(0 - w/3,-20));
     v[3].set(screenX(0 - w/3,20),screenY(0 - w/3,20));
-    fill(bus.colour);
-    rect(0-w/3,0-h/2,w,h);
+    image(img,0-w/3,0-h/2);
     popMatrix();   // RESTORE
     
     pushMatrix();  // SAVE

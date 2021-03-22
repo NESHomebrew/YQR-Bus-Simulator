@@ -20,11 +20,13 @@ final int PHRASE_FREQUENCY = 20;  // DEFAULT: 20 - kills per phrase change
 final int MAX_BUS_SPEED = 6;      // DEFAULT: 6 - bus go brrrrrr...  
 final float BUS_FRICTION = 0.9;   // DEFAULT: 0.9 - 1.0 -> no deceleration - very sensitive try adding nines
 final int BLOOD_SIZE = 15;        // DEFAULT: 15 - soo much bloooood....
+
 ////////////////////////////////////////////
 //
 //      GLOBAL VARIABLES
 //
 ////////////////////////////////////////////
+
 Bus bus = new Bus();      // it's a bus!
 int score = 0;            // init score
 int highScore, lowScore;  // scores!
@@ -36,6 +38,8 @@ PFont font,font2,font3;         // fonts
 float timer = TIMER_LENGTH; 
 float elapsed;  // tracks milliseconds
 float target;   // used for offsetting TIMER_LENGTH seconds
+PImage img;     // stores the png of the bus
+
 
 ArrayList<MeatCrayon> crayons = new ArrayList<MeatCrayon>(); // all the little people
 ArrayList<Skid> skids = new ArrayList<Skid>();               // blood of the little people
@@ -59,9 +63,13 @@ GameState currentState = GameState.TITLE; // init gamestate
 void setup() {
   size(500,500,P2D);
   surface.setTitle("YQR Bus Simulator");
+
+  // load external files
   font = loadFont("Monospaced.bold-32.vlw");
   font2 = loadFont("Cambria-Italic-14.vlw");
   font3 = loadFont("Monospaced.bold-16.vlw");
+  img = loadImage("busScaled.png");
+
   
   // create/load highscore file
   fileExists();
