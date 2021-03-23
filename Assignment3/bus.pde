@@ -64,7 +64,7 @@ public class Bus {
          v[1].y <= 30 || v[1].y >= 500 ||    // hits the border. I also multiply the accelleration
          v[2].y <= 30 || v[2].y >= 500 ||    // by 1.1 because you can occasionally get stuck in
          v[3].y <= 30 || v[3].y >= 500) {    // the wall, and this helps prevent that.
-        speed = -speed*1.1;
+        speed = constrain(-speed*1.1,-maxSpeed,maxSpeed);
       }
     
     
