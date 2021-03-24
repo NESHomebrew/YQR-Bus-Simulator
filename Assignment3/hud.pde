@@ -62,6 +62,12 @@ void drawHud() {
       text("PRESS SPACE TO START", width/2, height/2);
       fill(0);
       text("PRESS SPACE TO START", width/2+1, height/2-1); 
+      textSize(16);
+      textFont(font3);
+      fill(#D8D8D8);
+      text("Control with Arrow keys or WASD", width/2, height/2 + 40);
+      fill(0);
+      text("Control with Arrow keys or WASD", width/2+1, height/2-1 + 40); 
       textAlign(LEFT);
       break;
     }
