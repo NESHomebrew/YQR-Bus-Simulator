@@ -9,3 +9,5 @@ You are the bus driver. You may choose to go for a Low Score, or HighScore. Cont
 
 **REQUIRED**
 - Processing 3+
+
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/14246207/158497529-3378622a-26c8-46aa-89f1-5b07b60b234a.gif)
